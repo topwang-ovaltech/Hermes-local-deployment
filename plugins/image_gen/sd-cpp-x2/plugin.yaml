@@ -1,0 +1,4 @@
+name: sd-cpp-x2
+kind: backend
+version: 0.1.0
+description: Hermes 图像生成后端，对接本地 sd-server
