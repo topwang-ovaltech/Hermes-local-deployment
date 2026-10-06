@@ -1,0 +1,7 @@
+# 统一文本行尾为 LF，shell 脚本强制 LF 且保留可执行位
+* text=auto
+*.sh text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
