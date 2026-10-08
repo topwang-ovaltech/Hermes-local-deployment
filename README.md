@@ -1,6 +1,12 @@
 # Hermes-local-deployment
 local deployed Hermes workflow settings
 
+Hermes:
+1..hermes/SOUL.md:
+personalized identity definition for the agent (女仆「小花」人设)
+2..hermes/config.yaml:
+Hermes config; defines model_routes for the open-xiaomi-bridge voice route → 5080 GPU's Swift-Qwen3.8-27B-Q3 (192.168.33.205:8080)
+
 
 Plugin:
 1.sd-cpp-x2:
