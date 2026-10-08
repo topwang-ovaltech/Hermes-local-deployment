@@ -1,0 +1,12 @@
+[Unit]
+Description=Hermes Dashboard
+After=hermes-gateway.service
+
+[Service]
+Type=simple
+ExecStart=/home/oval/.local/bin/hermes dashboard --host 127.0.0.1 --port 9119 --skip-build --no-open
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=default.target

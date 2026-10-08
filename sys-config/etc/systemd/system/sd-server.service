@@ -1,0 +1,27 @@
+[Unit]
+Description=Stable Diffusion.cpp sd-server (Vulkan)
+After=network.target
+
+[Service]
+Type=simple
+User=oval
+SupplementaryGroups=render
+WorkingDirectory=/home/oval/ai/src/stable-diffusion.cpp
+Environment=LD_LIBRARY_PATH=/home/oval/ai/src/stable-diffusion.cpp/build-vulkan/bin:/usr/lib/x86_64-linux-gnu
+Environment=XDG_RUNTIME_DIR=/run/user/1000
+ExecStart=/home/oval/ai/src/stable-diffusion.cpp/build-vulkan/bin/sd-server \
+  --diffusion-model /home/oval/ai/models/QwenImage/qwen-image-2512-Q4_K_M.gguf \
+  --llm /home/oval/ai/models/QwenImage/Qwen2.5-VL-7B-Instruct-abliterated.Q4_K_M.gguf \
+  --vae /home/oval/ai/models/QwenImage/qwen_image_vae.safetensors \
+  --backend diffusion=vulkan0 \
+  --sampling-method euler \
+  --diffusion-fa \
+  --flow-shift 3 \
+  --steps 20 --cfg-scale 2.5 \
+  --listen-ip 0.0.0.0 \
+  --listen-port 8090
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
